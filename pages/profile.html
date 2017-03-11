@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="../style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    <script src="https://media.twiliocdn.com/sdk/js/common/v0.1/twilio-common.min.js"></script>
+<script src="https://media.twiliocdn.com/sdk/js/chat/v0.12/twilio-chat.min.js"></script>
 	<script src="../bootstrap/js/bootstrap.js"></script>
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../click.js"></script>
@@ -25,13 +27,12 @@
 	<a href="dashboard.html">Dashboard</a></button>
 	<button type="button" class="btn btn-outline-primary btn-lg" id="button"><a href="profile.html">Profile</a>
 	</button>
-	<button type="button" class="btn btn-outline-primary btn-lg" id="button"><a href="messages.html">MyMessages</a>
-	</button>
+	
      <button type="button" class="btn btn-outline-primary btn-lg" id="logoutButton">Log Out
   </button>
 
 
-		<p class="header_title">Please Don't Kill Me</p>
+		<p class="header_title">AskOut</p>
 		</h1>
 
 </header>
@@ -64,7 +65,7 @@
         </div>
         <div class="btn-group" role="group">
             <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <div class="hidden-xs">Favourites</div>
+                <div class="hidden-xs">Conversation Starters</div>
             </button>
         </div>
     </div>
@@ -78,7 +79,9 @@
           <h3 id="aboutus">@AboutUs</h3>
         </div>
         <div class="tab-pane fade in" id="tab3">
-          <h3>I love cats</h3>
+            <h3>Mary Poppins is a trickster God.</h3>
+            <h3>The laziest question you could ever ask a theologist is whether or not God exists.</h3>
+            <h3>Ask me about Prague. I won't shut up.</h3>
         </div>
       </div>
     </div>
