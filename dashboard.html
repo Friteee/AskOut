@@ -4,8 +4,8 @@
 <head>
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/> 
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
  	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
 
@@ -16,12 +16,12 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/theme/blue.css">
   <link rel="stylesheet" type="text/css" href="./assets/css/theme/red.css">
   <link rel="stylesheet" type="text/css" href="./assets/css/theme/yellow.css">
- 
+
 	<link rel="stylesheet" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>My Dashboard</title>
 
-</head> 
+</head>
 
 <body>
 <header>
@@ -45,7 +45,7 @@
         <div class="useravatar">
             <img alt="" src="pictures/userpicture.jpg" id="userpicture">
         </div>
-       
+
           <div class="dropdown-menu">
             <div class="profile-info">
               <h4 class="username">Scott White</h4>
@@ -74,12 +74,18 @@
               </li>
             </ul>
           </div>
-        </li>
-      </ul>
 </header>
 
 <main>
+	<div id="map" style="width: 500 px; height: 400px"></div>
 </main>
+
+<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/dashboard.js"></script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByKX0TDTS59jiVfQqS2t-A2KodG4kr-eA&callback=initMap">
+</script>
 
 </body>
 </html>
