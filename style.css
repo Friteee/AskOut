@@ -78,6 +78,10 @@ main{
 #submit{
 	width: 100%;
 }
+
+#submit-map{
+	width: 80%;
+}
 .middle{
 	text-align: left;
 	margin: 15em 18% 0 18%;
