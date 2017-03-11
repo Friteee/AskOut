@@ -12,7 +12,7 @@ $client->messages->create(
     "+15558675309", //change to the user mobile number variable
     array(
         'from' => '+442033222462',
-        'body' => "This is the ship that made the Kessel Run in fourteen parsecs?",
+        'body' => "User (name and surname) with the number (mobile number) is checked in.",
         'mediaUrl' => "https://c1.staticflickr.com/3/2899/14341091933_1e92e62d12_b.jpg",
     )
 );
