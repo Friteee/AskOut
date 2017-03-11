@@ -36,7 +36,7 @@ function register()
   }
   $stmt->close();
   $stmt = $mysqli->prepare("INSERT INTO users
-                            (name, surname, email, passhash, description, phone, logged_in)
+                            (name, surname, email, passhash, description, phone, track)
                             VALUES
                             (?, ?, ?, ?, ?, ?, 1)");
   $stmt->bind_param('ssssss', $name, $surname, $email, $password, $description, $mobileNumber);
