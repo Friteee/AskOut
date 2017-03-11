@@ -96,8 +96,8 @@ form{
 }
 
 #map{
-	
 	margin: 1em 10% 0 10%;
+	
 }
 
 #settings{
@@ -138,10 +138,21 @@ form{
 .profile-img{
 	width: 50%;
 }
+
  #in_header{
  	opacity: 0;
 	width: 1%;
 	height: 1%;
+}
+
+#submit-now{
+	width:20%;
+	background-color: transparent;
+	border: 5px solid white;
+}
+
+.messages{
+	margin: 1em 10%;
 }
 
 @media screen and (min-width: 600px){
