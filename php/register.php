@@ -37,8 +37,8 @@ function register()
   $stmt = $mysqli->prepare("INSERT INTO users
                             (name, surname, email, passhash, description, track)
                             VALUES
-                            (?, ?, ?, ?, ?, ?, 1)");
-  $stmt->bind_param('ssssss', $name, $surname, $email, $password, $description);
+                            (?, ?, ?, ?, ?, 1)");
+  $stmt->bind_param('sssss', $name, $surname, $email, $password, $description);
   $stmt->execute();
   if ($stmt->errno != 0)
   {
@@ -52,6 +52,7 @@ function register()
   }
   $_SESSION['email'] = $email;
   $_SESSION['name'] = $name;
+  $_SESSION['id'] = $stmt->insert_id;
   $mysqli->close();
   echo 'success';
 }

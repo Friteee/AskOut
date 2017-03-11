@@ -1,9 +1,9 @@
 <?php
 
 require_once'connect_to_db.php';
-getUsersNearLocation();
+getMessages();
 
-function getUsersNearLocation()
+function getMessages()
 {
   $latitude = htmlspecialchars($_POST['lat']);
   $longitude = htmlspecialchars($_POST['lng']);
@@ -18,18 +18,13 @@ function getUsersNearLocation()
   {
     session_start();
   }
-  if (empty($_SESSION) ||
-      empty($_SESSION['email']))
-  {
-    echo json_encode(['status' => 'error', 'data' => 'Person is not logged in.']);
-    return;
-  }
   $mysqli = createMySQLi();
   $diff = 0.5;
-  $stmt = $mysqli->prepare("SELECT * FROM users WHERE
+  $stmt = $mysqli->prepare("SELECT * FROM messages WHERE
                             longitude >= (? - $diff) AND longitude <= (? + $diff) AND
-                            latitude >= (? - $diff) AND latitude <= (? + $diff) AND
-                            track = 1");
+                            latitude >= (? - $diff) AND latitude <= (? + $diff)
+                            ORDER BY creation LIMIT 100
+                            ");
   $stmt->bind_param('dddd', $longitude, $longitude, $latitude, $latitude);
   $stmt->execute();
   $stmt_result = $stmt->get_result();
@@ -46,8 +41,7 @@ function getUsersNearLocation()
     array_push($data,['name'        => $row['name'],
                       'latitude'    => $row['latitude'],
                       'longitude'   => $row['longitude'],
-                      'description' => $row['description'],
-                      'id'          => $row['id']]);
+                      'text'        => $row['text']]);
   }
   $mysqli->close();
   echo json_encode(['status' => 'success', 'data' => $data]);

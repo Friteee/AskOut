@@ -105,3 +105,36 @@ function logout(){
     window.location.replace('../index.html');
   });
 }
+
+function createMessage()
+{
+  var messageData = {longitude: position.lng, latitude: position.lat, text: 'TODO:GETTEXT'};
+  $.ajax({
+    url: "../php/create_message.php",
+    type: 'POST',
+    data: position
+  }).done(function(response)
+  {
+    if(response != 'success')
+      console.log(response);
+  });
+}
+
+function getMessages()
+{
+  $.ajax({
+    url: "../php/get_messages.php",
+    type: 'POST',
+    data: position
+  }).done(function(response)
+  {
+    response = JSON.parse(response);
+    var data = response['data'];
+    data.forEach(addMessage);
+  });
+}
+
+function addMessage()
+{
+  // TODO
+}

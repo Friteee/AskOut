@@ -36,6 +36,7 @@ function login()
   }
   $_SESSION['name'] = $row['name'];
   $_SESSION['email'] = $row['email'];
+  $_SESSION['id'] = $row['id'];
   $stmt = $mysqli->prepare("UPDATE users SET track = 1 WHERE email = ?");
   $stmt->bind_param('s', $email);
   $stmt->execute();
