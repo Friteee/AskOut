@@ -61,9 +61,6 @@ function register()
     echo 'Failed to create user';
     return;
   }
-  if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-  }
   $_SESSION['email'] = $email;
   $_SESSION['name'] = $name;
   $_SESSION['phone'] = $mobileNumber;

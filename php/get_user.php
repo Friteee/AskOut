@@ -1,11 +1,11 @@
 <?php
 
 require_once'connect_to_db.php';
-sendLocation();
+getUser();
 
-function sendLocation()
+function getUser()
 {
-  $id = $_GET['id'];
+  $id = $_POST['id'];
   if(empty($id))
   {
     echo json_encode(['status' => 'error', 'data' => "Id is not provided"]);
@@ -28,7 +28,7 @@ function sendLocation()
   while($row = $stmt_result->fetch_array())
   {
     array_push($data,['name'        => $row['name'],
-                      'description' => $row['description']);
+                      'description' => $row['description']]);
   }
   $mysqli->close();
   echo json_encode(['status' => 'success', 'data' => $data]);
