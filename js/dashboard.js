@@ -57,7 +57,7 @@ function sendPosition()
 {
   // create the request to server
   $.ajax({
-    url: "php/send_location.php",
+    url: "../php/send_location.php",
     type: 'POST',
     data: position
   }).done(appendNearbyPeople);
@@ -78,7 +78,7 @@ function appendNearbyPeople(response)
 function getPeopleNear()
 {
   $.ajax({
-    url: "php/get_users_near_location.php",
+    url: "../php/get_users_near_location.php",
     type: 'POST',
     data: position
   }).done(function(response)
@@ -96,5 +96,9 @@ function addUser(user)
     position: {lat : user.latitude, lng: user.longitude},
     map: map,
     label: user.name
+  });
+  marker.addListener('click', function()
+  {
+    window.location.replace('profile.html?id=' + user.id);
   });
 }
