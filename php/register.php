@@ -16,10 +16,12 @@ function register()
     echo "One of the fields is empty";
     return;
   }
+  $password = hash('sha256', $password);
   $mysqli = createMySQLi();
   $stmt = $mysqli->prepare("SELECT * FROM users WHERE email = ?");
   $stmt->bind_param('s', $email);
   $stmt->execute();
+  $stmt_result = $stmt->get_result();
   if ($stmt->errno != 0)
   {
     $stmt->close();
@@ -27,7 +29,7 @@ function register()
     echo 'Failed to create user.';
     return;
   }
-  if($stmt->num_rows != 0)
+  if($stmt_result->num_rows != 0)
   {
     echo "User already exists";
     return;
@@ -43,9 +45,14 @@ function register()
   {
     $stmt->close();
     $mysqli->close();
-    echo 'Failed to create user.';
+    echo 'Failed to create user';
     return;
   }
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
+  $_SESSION['email'] = $email;
+  $_SESSION['name'] = $name;
   $mysqli->close();
   echo 'success';
 }
