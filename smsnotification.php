@@ -5,7 +5,7 @@ use Twilio\Rest\Client;
 
 // Your Account Sid and Auth Token from twilio.com/user/account
 $sid = "ACa0c7fb496a58af7fcc32e8c5e41bbe2e";
-$token = "your_auth_token";
+$token = "e13175ce8269342d9c0c41168f4ce593";
 $client = new Client($sid, $token);
 
 $client->messages->create(
