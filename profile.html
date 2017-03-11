@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8" >
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
  	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
@@ -19,9 +20,15 @@
 
 <body>
 <header>
-<button type="button" class="btn btn-outline-primary btn-lg" id="button">
-<a href="dashboard.html">Dashboard</a></button>
-<span class="title">Our App</span>
+<h1 class="header">
+	<button type="button" class="btn btn-outline-primary btn-lg" id="button">
+	<a href="dashboard.html">Dashboard</a></button>
+	<button type="button" class="btn btn-outline-primary btn-lg" id="button"><a href="profile.html">Profile</a>
+	</button>
+	<button type="button" class="btn btn-outline-primary btn-lg" id="button"><a href="messages.html">MyMessages</a>
+	</button>
+		<p class="header_title">Please Don't Kill Me</p>
+		</h1>
 </header>
 <nav>
 	
@@ -29,7 +36,7 @@
 	<div class="col-lg-6 col-sm-6" id="profile">
     <div class="card hovercard">
         <div class="card-background">
-            <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/">
+            <img class="card-bkimg" alt="" src="pictures/userpicture.jpg">
             <!-- http://lorempixel.com/850/280/people/9/ -->
         </div>
         <div class="useravatar">
@@ -52,7 +59,7 @@
         </div>
         <div class="btn-group" role="group">
             <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <div class="hidden-xs">Past Locations</div>
+                <div class="hidden-xs">Favourites</div>
             </button>
         </div>
     </div>
@@ -66,7 +73,7 @@
           <h3>@AboutUs</h3>
         </div>
         <div class="tab-pane fade in" id="tab3">
-          <h3>History</h3>
+          <h3>I love cats</h3>
         </div>
       </div>
     </div>

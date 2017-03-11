@@ -19,23 +19,32 @@ body{
 	-o-transition: all 0.1s ease;
 	transition: all 0.1s ease;
 
+
 }
 
-
-
-header{
+.header{
 	float: left;
 	font-family: 'Playfair Display', serif;
-	margin: 1em 0 1em 3%;
+	margin: 1em 0 0 3%;
+	font-size: 1em;
+}
+
+.header_title{
+	clear: left;
+	font-size: 2em;
 }
 
 #button{
+	float: left;
 	background-color: transparent;
 	border: 5px solid white;
-	size: 20em;
+	margin: 0.5em 1%;
 }
 
-.title
+.header_title{
+	float: left;
+	font-size: 5em;
+}
 
 main{
 	clear: left;
@@ -99,11 +108,8 @@ form{
 		margin-left: 15%;
 	}
 
-	header{
-		margin: 2em 0 0 0;
-	}
 	#profile{
-		margin: 3em 0 0 0 ;
+		margin: 2em 0 0 0 ;
 	}
 }
 
