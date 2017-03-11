@@ -7,6 +7,9 @@ $(document).ready(function(){
   $('#submitmsg').click(createMessage);
 });
 
+window.setInterval(getPeopleNear, 5000);
+window.setInterval(getMessages, 1000);
+
 function initMap() {
     getPosition();
 }
@@ -19,6 +22,7 @@ function getPosition()
     wrapIpPosition("no error");
   }
 }
+
 
 function wrapIpPosition(error)
 {
@@ -46,7 +50,8 @@ function setPosition()
   map.addListener("click", function (event) {
     var latitude = event.latLng.lat();
     var longitude = event.latLng.lng();
-    console.log( latitude + ', ' + longitude );
+    position = {lat: latitude, lng: longitude};
+    sendPosition();
   });
 }
 
@@ -144,13 +149,13 @@ function createMessage(event)
 
 function getMessages()
 {
-  $('#chatbox').val("");
   $.ajax({
     url: "../php/get_messages.php",
     type: 'POST',
     data: position
   }).done(function(response)
   {
+    $('#chatbox').val("");
     response = JSON.parse(response);
     var data = response['data'];
     data.forEach(addMessage);
