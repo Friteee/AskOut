@@ -17,7 +17,7 @@ function register(event) {
 
   // create the request to server
   $.ajax({
-    url: "php/register.php",
+    url: "../php/register.php",
     type: 'POST',
     data: formToDict('#registration-form')
   }).done(function (response) {

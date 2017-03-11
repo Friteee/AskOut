@@ -17,7 +17,7 @@ function login(event) {
 
   // create the request to server
   $.ajax({
-    url: "php/login.php",
+    url: "../php/login.php",
     type: 'POST',
     data: formToDict('#login-form')
   }).done(function (response) {
