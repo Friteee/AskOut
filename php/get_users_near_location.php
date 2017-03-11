@@ -9,7 +9,7 @@ function sendLocation()
   $longitude = htmlspecialchars($_POST['lng']);
   if(empty($longitude) || empty($latitude))
   {
-    echo ['status' => 'error', 'data' => "One of the fields is empty"];
+    echo json_encode(['status' => 'error', 'data' => "One of the fields is empty"]);
     return;
   }
   $latitude = floatval($latitude);
@@ -21,7 +21,7 @@ function sendLocation()
   if (empty($_SESSION) ||
       empty($_SESSION['email']))
   {
-    echo ['status' => 'error', 'data' => 'Person is not logged in.'];
+    echo json_encode(['status' => 'error', 'data' => 'Person is not logged in.']);
     return;
   }
   $mysqli = createMySQLi();
@@ -30,14 +30,14 @@ function sendLocation()
                             longitude >= (? - $diff) AND longitude <= (? + $diff) AND
                             latitude >= (? - $diff) AND latitude <= (? + $diff) AND
                             track = 1");
-  $stmt->bind_param('dds', $latitude, $longitude, $_SESSION['email']);
+  $stmt->bind_param('dddd', $longitude, $longitude, $latitude, $latitude);
   $stmt->execute();
   $stmt_result = $stmt->get_result();
   if ($stmt->errno != 0)
   {
     $stmt->close();
     $mysqli->close();
-    echo ['status' => 'error', 'data' => 'Failed to update location.'];
+    echo json_encode(['status' => 'error', 'data' => 'Failed to update location.']);
     return;
   }
   $data = array();

@@ -1,6 +1,7 @@
 
 
 var position = null;
+var map = null;
 // $( window ).on('beforeunload', function() {
 //   $.ajax({
 //     url: "php/logout.php",
@@ -41,7 +42,7 @@ function wrapGpsPosition(pos) {
 
 function setPosition()
 {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     center: position
   });
@@ -83,5 +84,17 @@ function getPeopleNear()
   }).done(function(response)
   {
     console.log(response);
+    response = JSON.parse(response);
+    var data = response['data'];
+    data.forEach(addUser);
+  });
+}
+
+function addUser(user)
+{
+  var marker = new google.maps.Marker({
+    position: {lat : user.latitude, lng: user.longitude},
+    map: map,
+    label: user.name
   });
 }
