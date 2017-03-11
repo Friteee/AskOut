@@ -61,6 +61,7 @@ main{
   }
 }
  .centered{
+
  	text-align: center;
  	margin: 5em 18% 0 18%;
  	animation-name: dropHeader;
@@ -68,6 +69,13 @@ main{
 	animation-timing-function: ease-out;
 	animation-duration: 1s;
  }
+
+#button_low{
+	margin: 1em 25% 1em 25%;
+	background-color: transparent;
+	border: 5px solid white;
+
+}
 
 .middle{
 	text-align: left;
