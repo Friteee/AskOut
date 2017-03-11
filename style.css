@@ -23,7 +23,7 @@ body{
 }
 
 .header{
-	float: left;
+	
 	font-family: 'Playfair Display', serif;
 	margin: 1em 0 0 3%;
 	font-size: 1em;
@@ -49,6 +49,7 @@ body{
 main{
 	clear: left;
 }
+
 @keyframes dropHeader {
   0% {
   	opacity: 0;
@@ -78,8 +79,18 @@ form{
 	animation-duration: 1.5s;
 }
 
+#settings{
+	color: black;
+	width: 100%;
+	margin: 0 0 0 0;
+	background-color: rgb(255, 250, 250);
+	padding: 1em 5% 1em 5%;
+	border-bottom-right-radius:5px;
+	border-bottom-left-radius:5px;
+	animation: none;
+}
+
 #profile{
-	clear: left;
 	width: 100%;
 	margin: 1em 0 0 0 ;
 }
@@ -106,13 +117,23 @@ form{
 .profile-img{
 	width: 50%;
 }
+ #in_header{
+ 	opacity: 0;
+	width: 1%;
+	height: 1%;
+}
+
 @media screen and (min-width: 600px){
 	h1{
 		margin-left: 15%;
 	}
 
-	#profile{
-		margin: 2em 0 0 0 ;
+	#in_header{
+		opacity: 1;
+		float: right;
+		margin-right: 0;
+		width: 10%;
+		height: 10%;
 	}
 }
 
