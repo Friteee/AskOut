@@ -60,6 +60,14 @@ main{
     transform: translateY(0);
   }
 }
+ .centered{
+ 	text-align: center;
+ 	margin: 5em 18% 0 18%;
+ 	animation-name: dropHeader;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 1s;
+ }
 
 .middle{
 	text-align: left;
@@ -77,6 +85,11 @@ form{
 	animation-iteration-count: 1;
 	animation-timing-function: ease-out;
 	animation-duration: 1.5s;
+}
+
+#map{
+	
+	margin: 1em 10% 0 10%;
 }
 
 #settings{

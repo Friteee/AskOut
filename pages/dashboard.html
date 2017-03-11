@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+ 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+
+	  <link rel="stylesheet" type="text/css" href="../assets/css/vendor.css">
+	  <link rel="stylesheet" type="text/css" href="../assets/css/flat-admin.css">
+	<!-- Theme -->
+	  <link rel="stylesheet" type="text/css" href="../assets/css/theme/blue-sky.css">
+	  <link rel="stylesheet" type="text/css" href="../assets/css/theme/blue.css">
+	  <link rel="stylesheet" type="text/css" href="../assets/css/theme/red.css">
+	  <link rel="stylesheet" type="text/css" href="../assets/css/theme/yellow.css">
+
+	<link rel="stylesheet" href="../style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Dashboard</title>
+
+</head>
+
+<body>
+<header>
+<h1 class="header">
+  <button type="button" class="btn btn-outline-primary btn-lg" id="button">
+  <a href="dashboard.html">Dashboard</a></button>
+  <button type="button" class="btn btn-outline-primary btn-lg" id="button"><a href="profile.html">Profile</a>
+  </button>
+  <button type="button" class="btn btn-outline-primary btn-lg" id="button"><a href="messages.html">MyMessages</a>
+  </button>
+  <div class="useravatar" id="in_header">
+            <img alt="" src="../pictures/icon.ico" id="userpicture">
+ </div>
+    <p class="header_title">Please Don't Kill Me</p>
+    </h1>
+</header>
+
+<main>
+	<div id="map" style="width: 500 px; height: 400px"></div>
+</main>
+
+<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../js/dashboard.js"></script>
+<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByKX0TDTS59jiVfQqS2t-A2KodG4kr-eA&callback=initMap">
+</script>
+
+</body>
+</html>
