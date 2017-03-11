@@ -43,6 +43,11 @@ function setPosition()
     zoom: 14,
     center: position
   });
+  map.addListener("click", function (event) {
+    var latitude = event.latLng.lat();
+    var longitude = event.latLng.lng();
+    console.log( latitude + ', ' + longitude );
+  });
 }
 
 function sendPosition()
@@ -150,6 +155,7 @@ function getMessages()
     var data = response['data'];
     data.forEach(addMessage);
   });
+
 }
 
 function clearMarkers()
@@ -163,5 +169,5 @@ function clearMarkers()
 function addMessage(message)
 {
   $('#chatbox').val($('#chatbox').val() + message.name + ' : ' + message.text + '\n');
-  // TODO
+  $('#chatbox').scrollTop($('#chatbox')[0].scrollHeight);
 }
