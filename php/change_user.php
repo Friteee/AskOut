@@ -8,10 +8,9 @@ function register()
   $description = htmlspecialchars($_POST['description']);
   $name = htmlspecialchars($_POST['name']);
   $email = htmlspecialchars($_POST['email']);
-  $mobileNumber = htmlspecialchars($_POST['phone']);
   $password = htmlspecialchars($_POST['password']);
   $surname = htmlspecialchars($_POST['surname']);
-  if(empty($name) || empty($email) || empty($mobileNumber) || empty($password))
+  if(empty($name) || empty($email) || empty($password))
   {
     echo "One of the fields is empty";
     return;
@@ -49,10 +48,8 @@ function register()
                                 email = ?,
                                 passhash = ?,
                                 description = ?,
-                                phone = ?
                             WHERE id = ?");
-  $stmt->bind_param('ssssssi', $name, $surname, $email, $password, $description,
-                    $mobileNumber, $_SESSION['id']);
+  $stmt->bind_param('ssssssi', $name, $surname, $email, $password, $description, $_SESSION['id']);
   $stmt->execute();
   if ($stmt->errno != 0)
   {
@@ -63,7 +60,6 @@ function register()
   }
   $_SESSION['email'] = $email;
   $_SESSION['name'] = $name;
-  $_SESSION['phone'] = $mobileNumber;
   $mysqli->close();
   echo 'success';
 }

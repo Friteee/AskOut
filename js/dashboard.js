@@ -2,15 +2,9 @@
 
 var position = null;
 var map = null;
-// $( window ).on('beforeunload', function() {
-//   $.ajax({
-//     url: "php/logout.php",
-//     type: 'POST',
-//     async: false
-//   }).done(function(){
-//     alert("asd");
-//   });
-// });
+$(document).ready(function(){
+  $('#logout').click(logout);
+});
 
 function initMap() {
     getPosition();
@@ -100,5 +94,14 @@ function addUser(user)
   marker.addListener('click', function()
   {
     window.location.replace('profile.html?id=' + user.id);
+  });
+}
+
+function logout(){
+  $.ajax({
+    url: "../php/logout.php",
+    type: 'POST'
+  }).done(function(){
+    window.location.replace('../index.html');
   });
 }

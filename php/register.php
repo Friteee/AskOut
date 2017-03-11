@@ -8,10 +8,9 @@ function register()
   $description = htmlspecialchars($_POST['description']);
   $name = htmlspecialchars($_POST['name']);
   $email = htmlspecialchars($_POST['email']);
-  $mobileNumber = htmlspecialchars($_POST['phone']);
   $password = htmlspecialchars($_POST['password']);
   $surname = htmlspecialchars($_POST['surname']);
-  if(empty($name) || empty($email) || empty($mobileNumber) || empty($password))
+  if(empty($name) || empty($email) || empty($password))
   {
     echo "One of the fields is empty";
     return;
@@ -36,10 +35,10 @@ function register()
   }
   $stmt->close();
   $stmt = $mysqli->prepare("INSERT INTO users
-                            (name, surname, email, passhash, description, phone, track)
+                            (name, surname, email, passhash, description, track)
                             VALUES
                             (?, ?, ?, ?, ?, ?, 1)");
-  $stmt->bind_param('ssssss', $name, $surname, $email, $password, $description, $mobileNumber);
+  $stmt->bind_param('ssssss', $name, $surname, $email, $password, $description);
   $stmt->execute();
   if ($stmt->errno != 0)
   {
@@ -53,7 +52,6 @@ function register()
   }
   $_SESSION['email'] = $email;
   $_SESSION['name'] = $name;
-  $_SESSION['phone'] = $mobileNumber;
   $mysqli->close();
   echo 'success';
 }
