@@ -1,0 +1,63 @@
+html{
+	height: 100%;
+}
+
+body{
+	text-align: center;
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	font-family: 'Arial', 'Times New Roman';
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+				url(pictures/background.jpg) no-repeat center center fixed;
+	background-size: cover;
+	font-family: 'Playfair Display', serif;
+	background-position: center;
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+
+}
+
+@keyframes dropHeader {
+  0% {
+  	opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+  	opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.middle{
+	text-align: justify;
+	margin: 15em 18% 0 18%;
+	color: white;
+	animation-name: dropHeader;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 1s;
+}
+
+form{
+	width: 50%;
+	margin: 15em 10% 0 25%;
+	color: white;
+	animation-name: dropHeader;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 2s;
+}
+
+input{
+	width: 40%;
+}
+.
+.corner{
+	margin-top: 1em;
+}
+.btn-primary{
+	margin-left: -50px;
+}

@@ -3,36 +3,81 @@
 
 <head> 
 	<meta charset="utf-8" />
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+ 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
 	<title> What the hell??? </title>
 </head>
 
 <body>
-	<header>
-		<h1> Welcome to the WIP! </h1>
-	</header>
-	<form>
-		<p>
-			Name: <br>
-			<input type="text" required="required" name="first_name" /> <br>
-		</p>
-		<p>
-			Surname: <br>
-			<input type="text" required="required" name="surname" /> <br>
-		</p>	
-			Mobile number: <br>
-			<input type="text" required="required" name="number" /> <br>
-		<p>	
-			Email: <br>
-			<input type="text" required="required" name="email" /> <br>
-		</p>	
-			About yourself: <br>
-			<input type="text" required="required" name="description" style="height: 100px;" /> <br>
-		<p>	
-			Password: <br> 
-			<input type="password" required="required" name="password" /> <br> <br>
-		</p>
-		<input type="submit" value="Register" />
+
+	<form class="form-horizontal" role="form" method="get" >
+	<h1 class="register">Register</h1>
+	<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Enter your name" required="required">
+			</div>
+		</div>
+	<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">Surname</label>
+			<div class="col-sm-10">
+				<input type="text" name="surrname" id="name" tabindex="1" class="form-control" placeholder="Enter your surname" required="required">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">Username</label>
+			<div class="col-sm-10">
+				<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Choose your username" required="required">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">Phone Number</label>
+			<div class="col-sm-10">
+				<input type="text" name="username" id="phone" tabindex="1" class="form-control" placeholder="" required="required">
+			</div>
+		</div> 
+
+		<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">Email</label>
+			<div class="col-sm-10">
+				<input type="text" name="username" id="phone" tabindex="1" class="form-control" placeholder="" value="">
+			</div>
+		</div> 
+
+		<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">About Yourself</label>
+			<div class="col-sm-10">
+				<textarea type="text" name="username" id="phone" tabindex="1" class="form-control" placeholder="" style="height: 100px;"></textarea>
+			</div>
+		</div> 
+
+		<div class="form-group">
+			<label for="Password" class="col-sm-2 control-label">Password</label>
+			<div class="col-sm-10">
+					<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Choose a password">
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-10 col-sm-offset-2">
+				<input id="submit" name="submit" type="submit" value="Register" class="btn btn-primary">
+			</div>
+			<div class="corner">Already a member? 
+				<a href="login.html" class="to_login"> Login </a> 
+			</div>
+			
+		</div>
+		<div class="form-group">
+			<div class="col-sm-10 col-sm-offset-2">
+			</div>
+		</div>
+
+		
 	</form>
+
 </body>
 
 </html>

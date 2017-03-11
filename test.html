@@ -1,28 +1,72 @@
+
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-  <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Home of pls dont kill me</title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Reverse Geocoding</title>
 
-      <!-- Bootstrap for original CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+  var geocoder;
 
-  </head>
-  <body>
-    <div id="map" style="width: 500 px; height: 400px"></div>
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+}
+//Get the latitude and the longitude;
+function successFunction(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    codeLatLng(lat, lng)
+}
 
-    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByKX0TDTS59jiVfQqS2t-A2KodG4kr-eA&callback=initMap">
-    </script>
+function errorFunction(){
+    alert("Geocoder failed");
+}
 
-  </body>
-</html>
+  function initialize() {
+    geocoder = new google.maps.Geocoder();
+
+
+
+  }
+
+  function codeLatLng(lat, lng) {
+
+    var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+      console.log(results)
+        if (results[1]) {
+         //formatted address
+         alert(results[0].formatted_address)
+        //find country name
+             for (var i=0; i<results[0].address_components.length; i++) {
+            for (var b=0;b<results[0].address_components[i].types.length;b++) {
+
+            //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+                if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                    //this is the object you are looking for
+                    city= results[0].address_components[i];
+                    break;
+                }
+            }
+        }
+        //city data
+        alert(city.short_name)
+
+
+        } else {
+          alert("No results found");
+        }
+      } else {
+        alert("Geocoder failed due to: " + status);
+      }
+    });
+  }
+</script>
+</head>
+<body onload="initialize()">
+
+</body>
+</html> 
