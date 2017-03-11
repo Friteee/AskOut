@@ -33,9 +33,9 @@
   </button>
   <button type="button" class="btn btn-outline-primary btn-lg" id="button"><a href="messages.html">MyMessages</a>
   </button>
-   <button type="button" class="btn btn-outline-primary btn-lg" id="button"><a href="logoot.html">Log Out</a>
+   <button type="button" class="btn btn-outline-primary btn-lg" id="logoutButton">Log Out
   </button>
- 
+
   <div class="useravatar" id="in_header">
   <a href="settings.html">
             <img alt="" src="../pictures/icon.ico" id="userpicture"></a>
@@ -51,24 +51,16 @@
         <p class="welcome">Join the Chat<b></b></p>
         <div style="clear:both"></div>
     </div>
-     
-    <div id="chatbox"></div>	
+
+    <textarea id="chatbox" style="overflow-y:scroll; resize:none" readonly></textarea>
 	<form class="form-horizontal" role="form" id="chat">
 		<div class="form-group" >
-			<input name="usermsg" type="text" id="usermsg" size="40" />
-	        <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+			<input name="usermsg" type="text" id="usermsg" size="40">
+	    <input name="submitmsg" type="submit" id="submitmsg" value="Send">
 		</div>
 	</form>
 </div>
 </main>
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-<script type="text/javascript">
-// jQuery Document
-$(document).ready(function(){
- 
-});
-</script>
 
 <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
