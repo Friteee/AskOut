@@ -163,3 +163,12 @@ form{
 
 	margin: 5em 0 0 0 ;
 }
+
+#userpicture{
+	display: block;
+    margin: auto;
+	overflow: hidden;
+	width: 50%;
+	
+	object-fit: cover;
+}
