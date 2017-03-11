@@ -36,7 +36,6 @@ body{
 
 #button{
 	float: left;
-
 	background-color: transparent;
 	border: 5px solid white;
 	margin: 0.5em 1%;
@@ -70,11 +69,11 @@ main{
 	animation-duration: 1s;
  }
 
-#button_low{
-	margin: 1em 25% 1em 25%;
+#logoutButton{
+	float: left;
 	background-color: transparent;
 	border: 5px solid white;
-
+	margin: 0.5em 1%;
 }
 #submit{
 	width: 100%;
