@@ -15,6 +15,7 @@ let chatClient = new Twilio.Chat.Client(token);
 				console.log('First name' + ' Second name' + ' joined channel ' + channel.friendlyName);
 			})
 			channel.on('messageAdded', function(message) {
+				myChannel.sendMessage($('#button').val());
 				console.log(message.author + ": " + message.body);
 			});
 			
@@ -27,8 +28,6 @@ let chatClient = new Twilio.Chat.Client(token);
 			console.log('Total Messages:' + totalMessages);
 		});
 		});
-
-		myChannel.sendMessage($('#button').val());
 		
 		
     });
