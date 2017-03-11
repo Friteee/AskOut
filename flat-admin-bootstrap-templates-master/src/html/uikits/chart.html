@@ -1,0 +1,45 @@
+@@include('../include/header.html',{
+  "path": ".."
+})
+
+@@include('../../components/sidebar/sidebar.html',{
+  "path": "..",
+  "menu": {
+    "dashboard": "",
+    "uikits": "active"
+  }
+})
+<div class="app-container">
+  @@include('../../components/navbar/navbar.html',
+  { 
+    "path": "..",
+    "title": "<span class=\"highlight\">Chart</span><span>&nbsp;Kits</span>"
+  })
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card">
+        <div class="card-header">
+          Chart & Data Visualization
+        </div>
+        <div class="card-body">
+          @@include('../../elements/chart/chart.html')
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <div class="card card-banner card-green">
+        <div class="card-header">
+          Chart Banner
+        </div>
+        <div class="card-body no-padding">
+          <div class="ct-chart-sale"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@@include('../include/footer.html',{
+  "path": ".."
+})

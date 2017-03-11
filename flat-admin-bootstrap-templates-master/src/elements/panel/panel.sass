@@ -1,0 +1,31 @@
+
+
+@mixin panel-color($name, $bg-color, $main-color, $border-color, $font-color)
+  .panel.panel-#{$name}
+    border-color: $border-color;
+    background-color: $bg-color;
+    .panel-heading
+      background-color: $main-color;
+      border-bottom-color: $border-color;
+      color: $font-color;
+
+
+.panel
+  margin-bottom: 30px;
+  border-radius: 3px;
+  border-bottom-width: 1px;
+  background-color: $white;
+  border-color: $grey;
+  .panel-heading
+    padding: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: $grey-lighter;
+  .panel-body
+    padding: 20px;
+
+@include panel-color("primary", $white, $blue-lightest, $blue-lighter, $blue-darker)
+@include panel-color("success", $white, $green-lightest, $green-lighter, $green-darker)
+@include panel-color("info", $white, $blue-sky-lightest, $blue-sky-lighter, $blue-sky-darker)
+@include panel-color("warning", $white, $yellow-lightest, $yellow-lighter, $yellow-darker)
+@include panel-color("danger", $white, $red-lightest, $red-lighter, $red-darker)

@@ -1,0 +1,43 @@
+@@include('../include/header.html',{
+  "path": ".."
+})
+
+@@include('../../components/sidebar/sidebar.html',{
+  "path": "..",
+  "menu": {
+    "dashboard": "",
+    "uikits": "active"
+  }
+})
+<div class="app-container">
+  @@include('../../components/navbar/navbar.html',
+    { 
+      "path": "..",
+      "title": "<span class=\"highlight\">Icons</span>"
+    })
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card card-tab card-mini">
+        <div class="card-header">
+          <ul class="nav nav-tabs tab-stats">
+            <li role="tab1" class="active">
+              <a href="#fontawesome" aria-controls="fontawesome" role="tab" data-toggle="tab">Font Awesome</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body tab-content">
+          <div role="tabpanel" class="tab-pane active" id="fontawesome">
+            @@include('../../components/icons/fontawesome.html',{
+              "path": ".."
+            })
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@@include('../include/footer.html',{
+  "path": ".."
+})

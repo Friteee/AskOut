@@ -1,0 +1,11 @@
+@mixin progress-color($name, $bg-color)
+  &.progress-bar-#{$name}
+    background-color: $bg-color;
+
+.progress
+  border-radius: 2px;
+
+@include progress-color("success", $green)
+@include progress-color("info", $blue-sky)
+@include progress-color("warning", $yellow)
+@include progress-color("danger", $red)

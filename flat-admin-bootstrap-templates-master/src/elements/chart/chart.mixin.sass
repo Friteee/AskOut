@@ -1,0 +1,26 @@
+
+@mixin chart-theme($color, $secondary-color)
+  @include chart-colorize("a", $color)
+  @include chart-colorize("b", $secondary-color)
+  @include chart-label-colorize("a", $color)
+  @include chart-label-colorize("b", $secondary-color)
+  .card-banner
+    @include chart-colorize("a", $white)
+
+@mixin chart-label-colorize($name,$color)
+  .ct-series-#{$name}
+    &:after
+      background-color: $color
+      
+@mixin chart-colorize($name,$color)
+  .ct-series-#{$name}
+    .ct-bar, .ct-line, .ct-point
+      stroke: $color
+    .ct-area
+      fill: $color
+    .ct-slice-pie
+      fill: rgba($color, 1)
+      stroke: $white
+      stroke-width: 3
+    .ct-slice-donut
+      stroke: $color

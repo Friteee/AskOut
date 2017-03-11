@@ -1,0 +1,10 @@
+
+@@include('./components/sidebar.html',{
+  "path": ".."
+})
+<div class="app-container" ng-class="main.page.class" ng-class="{'__navbar': main.toggle.navbar, '__sidebar': main.toggle.sidebar}">
+  @@include('./components/navbar.html',{
+    "path": ".."
+  })
+  <ui-view></ui-view>
+</div>

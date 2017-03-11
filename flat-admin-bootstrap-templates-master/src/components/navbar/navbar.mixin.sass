@@ -1,0 +1,8 @@
+@mixin navbar-theme($color, $bg, $extend: '')
+  .navbar#{$extend}
+    .navbar-header, .navbar-mobile
+      .navbar-brand
+        @if $extend == ".__inverse"
+          color: $white
+        .highlight
+          background-color: $color

@@ -1,0 +1,109 @@
+
+
+/* mixin */
+@mixin flex($direction: row, $wrap: nowrap, $align: flex-start, $justify: flex-start)
+  display: flex
+  flex-direction: $direction
+  flex-wrap: $wrap
+  align-items: $align
+  justify-content: $justify
+
+/* config */
+
+$green: #29c75f;
+$white: #fff;
+$grey-lightest: #f0f4f5
+$grey-lighter: #e7edee
+$grey: #dfe6e8
+$grey-darker: #c8d1d3
+$grey-darkest: #8d9293
+
+$black-lightest: #999
+$black-lighter: #666
+$black: #444
+$black-darker: #222
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400'
+
+html, body
+  padding: 0
+  margin: 0
+  min-height: 100vh
+  background-color: $white
+  font-family: 'Open Sans', sans-serif
+
+  .app-container
+    @include flex($align: center, $justify: center)
+    min-height: 100vh
+    width: 100%
+
+    .app-header
+      margin-top: 15px
+      margin-bottom: 15px
+      .app-brand
+        @include flex($align: center, $justify: center)
+        font-size: 1.5em
+        font-weight: 200
+        color: $black
+        text-decoration: none
+
+        .highlight
+          padding: 2px 5px
+          font-weight: 200
+          color: $white
+          border-radius: 2px
+          margin-right: 5px
+          background-color: $green
+    .app-body
+      padding: 30px 0
+      img
+        max-width: 400px
+        height: auto
+      ul.demo-list
+        list-style: none
+        padding: 15px
+        margin: 0
+        background-color: $grey-lightest
+        border-radius: 3px
+
+        li
+          padding: 0
+          position: relative
+          a
+            text-decoration: none
+            display: block
+            margin-bottom: 15px
+            background-color: $white
+            border-radius: 3px
+            box-shadow: 0 1px 2px $grey
+            padding: 20px
+            min-width: 300px
+            .title
+              font-size: 1.4em
+              color: $black-lighter
+            .subtitle
+              font-size: 0.9em
+              color: $grey-darkest
+            &:hover
+              background-color: $green
+              cursor: pointer
+              .title, .subtitle
+                color: $white
+          &:after
+            @include flex($align: center, $justify: center)
+            position: absolute
+            height: 100%
+            width: 50px
+            right: 0
+            top: 0
+            font-size: 2em
+            font-family: FontAwesome
+            content: "\f105"
+            color: $grey
+          &:last-child
+            a
+              margin-bottom: 0
+    .app-footer
+      font-size: 0.8em
+      text-align: center
+      color: $grey-darkest

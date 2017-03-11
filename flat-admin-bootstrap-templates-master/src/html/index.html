@@ -1,0 +1,26 @@
+@@include('./include/header.html',{
+  "path": "."
+})
+
+@@include('../components/sidebar/sidebar.html',{
+  "path": ".",
+  "menu": {
+    "dashboard": "active",
+    "uikits": ""
+  }
+})
+<div class="app-container">
+
+  @@include('../components/navbar/navbar.html',
+  {
+    "path": ".",
+    "title": "Dashboard"
+  })
+
+  @@include('./include/dashboard.html')
+  @@include('../elements/footer/footer.html')
+</div>
+
+@@include('./include/footer.html',{
+  "path": "."
+})

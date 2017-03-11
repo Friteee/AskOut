@@ -1,0 +1,198 @@
+.timeline
+  position: relative;
+  dl
+    & > dt.item 
+      display: block;
+      position: relative;
+      width: 100%;
+      .marker
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 50%;
+        margin-left: -15px;
+        background-color: $green;
+        border-radius: 15px;
+        margin-top: 15px;
+        z-index: 1007;
+        border: 4px solid $white;
+        box-shadow: 0 1px 1px rgba($black,0.05);
+      .event
+        width: 50%;
+        padding-left: 0px;
+        padding-right: 40px;
+        margin-bottom: 30px;
+        .event-body
+          background-color: $white;
+          border-radius: 2px;
+          padding: 30px;
+          font-size: 1em;
+          font-weight: 200;
+          box-shadow: 0 1px 2px rgba($black,0.1);
+        &::before
+          content: '';
+          display: block; 
+          position: absolute;
+          margin-top: 16px;
+          margin-left: -40px;
+          left: 50%;
+          top: 0;
+
+          width: 0; 
+          height: 0; 
+          border-top: 14px solid transparent;
+          border-bottom: 14px solid transparent; 
+          border-left: 14px solid #F5F5F5;
+
+        &::after
+          content: '';
+          display: block; 
+          position: absolute;
+          margin-top: 18px;
+          margin-left: -40px;
+          left: 50%;
+          top: 0;
+
+          width: 0; 
+          height: 0; 
+          border-top: 12px solid transparent;
+          border-bottom: 12px solid transparent; 
+          border-left: 12px solid #FFF;
+
+    & > dt.item.pos-right
+
+      .event
+        float: right;
+        width: 50%;
+        padding-left: 40px;
+        padding-right: 0px;
+        margin-bottom: 30px;
+        .event-body
+          background-color: #FFF;
+          border-radius: 2px;
+          padding: 30px;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+      .event::before
+        content: '';
+        display: block; 
+        position: absolute;
+        margin-top: 18px;
+        margin-left: auto;
+        margin-right: -40px;
+        left: auto;
+        right: 50%;
+        top: 0;
+
+        width: 0; 
+        height: 0; 
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        border-left: 0px; 
+        border-right: 14px solid #F5F5F5;
+
+      .event::after
+        content: '';
+        display: block; 
+        position: absolute;
+        margin-top: 18px;
+        margin-left: auto;
+        margin-right: -40px;
+        left: auto;
+        right: 50%;
+        top: 0;
+
+        width: 0; 
+        height: 0; 
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent; 
+        border-left: 0px;
+        border-right: 12px solid #FFF;
+
+    & > dt.item::after
+      content: '';
+      position: relative;
+      display: block;
+      clear: both;
+
+    & > dt.heading
+      & > .title
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1009;
+        width: 180px;
+
+        background-color: #DDD;
+        color: #555;
+        padding: 4px 12px;
+        text-align: center;
+        margin-bottom: 30px;
+
+  dl::after
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    margin-left: -2px;
+    background-color: #DDD;
+    z-index: 1006;
+    border-radius: 2px;
+
+.timeline.pos-right
+  dl 
+    & > dt.item
+      .marker
+        left: 0;
+        margin-left: 0;
+
+      .event
+        float: right;
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 0px;
+
+      .event::before
+        content: '';
+        display: block; 
+        position: absolute;
+        margin-top: 18px;
+        margin-left: auto;
+        margin-right: -50px;
+        left: auto;
+        right: 100%;
+        top: 0;
+
+        width: 0; 
+        height: 0; 
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        border-left: 0px; 
+        border-right: 14px solid #F5F5F5;
+
+      .event::after
+        content: '';
+        display: block; 
+        position: absolute;
+        margin-top: 18px;
+        margin-left: auto;
+        margin-right: -50px;
+        left: auto;
+        right: 100%;
+        top: 0;
+
+        width: 0; 
+        height: 0; 
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent; 
+        border-left: 0px;
+        border-right: 12px solid #FFF; 
+
+    & > dt.heading
+      & > .title
+        margin-left: 0px;
+  dl::after
+    left: 15px;

@@ -1,0 +1,13 @@
+.breadcrumb {
+  margin-bottom: 0;
+  background-color: transparent;
+  border-radius: 0;
+  & > li+li:before {
+    font-family: FontAwesome;
+    content: '\f105';
+    margin-right: 10px;
+    margin-left: 5px;
+    font-size: 1.4em;
+    vertical-align: middle;
+  }
+}

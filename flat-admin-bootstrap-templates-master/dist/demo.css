@@ -1,0 +1,107 @@
+
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
+html, body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif; }
+  html .app-container, body .app-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    min-height: 100vh;
+    width: 100%; }
+    html .app-container .app-header, body .app-container .app-header {
+      margin-top: 15px;
+      margin-bottom: 15px; }
+      html .app-container .app-header .app-brand, body .app-container .app-header .app-brand {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: row;
+            flex-direction: row;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -ms-flex-align: center;
+            align-items: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+        font-size: 1.5em;
+        font-weight: 200;
+        color: #444;
+        text-decoration: none; }
+        html .app-container .app-header .app-brand .highlight, body .app-container .app-header .app-brand .highlight {
+          padding: 2px 5px;
+          font-weight: 200;
+          color: #fff;
+          border-radius: 2px;
+          margin-right: 5px;
+          background-color: #29c75f; }
+    html .app-container .app-body, body .app-container .app-body {
+      padding: 30px 0; }
+      html .app-container .app-body img, body .app-container .app-body img {
+        max-width: 400px;
+        height: auto; }
+      html .app-container .app-body ul.demo-list, body .app-container .app-body ul.demo-list {
+        list-style: none;
+        padding: 15px;
+        margin: 0;
+        background-color: #f0f4f5;
+        border-radius: 3px; }
+        html .app-container .app-body ul.demo-list li, body .app-container .app-body ul.demo-list li {
+          padding: 0;
+          position: relative; }
+          html .app-container .app-body ul.demo-list li a, body .app-container .app-body ul.demo-list li a {
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            background-color: #fff;
+            border-radius: 3px;
+            box-shadow: 0 1px 2px #dfe6e8;
+            padding: 20px;
+            min-width: 300px; }
+            html .app-container .app-body ul.demo-list li a .title, body .app-container .app-body ul.demo-list li a .title {
+              font-size: 1.4em;
+              color: #666; }
+            html .app-container .app-body ul.demo-list li a .subtitle, body .app-container .app-body ul.demo-list li a .subtitle {
+              font-size: 0.9em;
+              color: #8d9293; }
+            html .app-container .app-body ul.demo-list li a:hover, body .app-container .app-body ul.demo-list li a:hover {
+              background-color: #29c75f;
+              cursor: pointer; }
+              html .app-container .app-body ul.demo-list li a:hover .title, html .app-container .app-body ul.demo-list li a:hover .subtitle, body .app-container .app-body ul.demo-list li a:hover .title, body .app-container .app-body ul.demo-list li a:hover .subtitle {
+                color: #fff; }
+          html .app-container .app-body ul.demo-list li:after, body .app-container .app-body ul.demo-list li:after {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: row;
+                flex-direction: row;
+            -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+            -ms-flex-align: center;
+                align-items: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+            position: absolute;
+            height: 100%;
+            width: 50px;
+            right: 0;
+            top: 0;
+            font-size: 2em;
+            font-family: FontAwesome;
+            content: "\f105";
+            color: #dfe6e8; }
+          html .app-container .app-body ul.demo-list li:last-child a, body .app-container .app-body ul.demo-list li:last-child a {
+            margin-bottom: 0; }
+    html .app-container .app-footer, body .app-container .app-footer {
+      font-size: 0.8em;
+      text-align: center;
+      color: #8d9293; }

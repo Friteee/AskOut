@@ -1,0 +1,119 @@
+@@include('../include/header.html',{
+  "path": ".."
+})
+@@include('../../components/sidebar/sidebar.html',{
+  "path": "..",
+  "menu": {
+    "dashboard": "",
+    "inbox": "",
+    "uikits": ""
+  }
+})
+<div class="app-container">
+  @@include('../../components/navbar/navbar.html',
+  { 
+    "path": "..",
+    "title": "Search"
+  })
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="app-heading">
+        <div class="app-title">
+          <div class="title">Search Result '<span class="highlight">Macbook Air</span>'</div>
+          <div class="description">102 result was found.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card card-tab">
+        <div class="card-header">
+          <ul class="nav nav-tabs">
+            <li role="tab1" class="active">
+              <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">All</a>
+            </li>
+            <li role="tab2">
+              <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Products</a>
+            </li>
+            <li role="tab3">
+              <a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Stats</a>
+            </li>
+            <li role="tab4">
+              <a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Messaging</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body no-padding tab-content">
+          <div role="tabpanel" class="tab-pane active no-padding" id="tab1">
+            <div class="search-result">
+              <ul class="result">
+                <li>
+                  <div class="img">
+                    <img src="http://placehold.it/200x150" />
+                  </div>
+                  <div class="info">
+                    <div class="title"><a href="#"><span class="highlight">Macbook Air</span> 2014</a></div>
+                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="img">
+                    <img src="http://placehold.it/200x150" />
+                  </div>
+                  <div class="info">
+                    <div class="title"><a href="#"><span class="highlight">Macbook Air</span> 2012</a></div>
+                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="info">
+                    <div class="title"><a href="#">Battery Replacement for <span class="highlight">Macbook Air</span></a></div>
+                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="info">
+                    <div class="title"><a href="#"><span class="highlight">Macbook Air</span> Assessories</a></div>
+                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</div>
+                  </div>
+                </li>
+              </ul>
+              <div class="footer">
+                <ul class="pagination">
+                  <li>
+                    <a href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li><a href="#">1</a></li>
+                  <li class="active"><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li>
+                    <a href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tab2">
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nullaip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nullaip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tab3">
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nullaip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nullaip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tab4">
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nullaip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nullaip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+@@include('../include/footer.html',{
+"path": ".."
+})

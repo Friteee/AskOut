@@ -1,0 +1,24 @@
+ul.tags
+  list-style: none;
+  overflow: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  & > li 
+    float: left;
+    & > a
+      color: $black-lighter;
+      display: block;
+      border-radius: 2px;
+      border: 1px solid $grey;
+      padding: 4px 8px;
+      margin: 5px;
+      font-size: 12px;
+      &:hover
+        color: $white;
+        border: 1px solid $green;
+        background-color: $green;
+        cursor: pointer
+
+  &::after 
+    @include clear

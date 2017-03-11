@@ -11,6 +11,7 @@ body{
 	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
 				url(pictures/background.jpg) no-repeat center center fixed;
 	background-size: cover;
+	color: white;
 	font-family: 'Playfair Display', serif;
 	background-position: center;
 	-webkit-transition: all 0.1s ease;
@@ -20,6 +21,25 @@ body{
 
 }
 
+
+
+header{
+	float: left;
+	font-family: 'Playfair Display', serif;
+	margin: 1em 0 1em 3%;
+}
+
+#button{
+	background-color: transparent;
+	border: 5px solid white;
+	size: 20em;
+}
+
+.title
+
+main{
+	clear: left;
+}
 @keyframes dropHeader {
   0% {
   	opacity: 0;
@@ -34,7 +54,6 @@ body{
 .middle{
 	text-align: left;
 	margin: 15em 18% 0 18%;
-	color: white;
 	animation-name: dropHeader;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-out;
@@ -44,14 +63,25 @@ body{
 form{
 	width: 45%;
 	margin: 15em 10% 0 25%;
-	color: white;
 	animation-name: dropHeader;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-out;
 	animation-duration: 1.5s;
 }
 
+#profile{
+	clear: left;
+	width: 100%;
+	margin: 1em 0 0 0 ;
+}
 
+#userpicture{
+	display: block;
+    margin: auto;
+	overflow: hidden;
+	width: 50%;
+	object-fit: cover;
+}
 
 #submit{
 	width: 100%;
@@ -68,7 +98,13 @@ form{
 	h1{
 		margin-left: 15%;
 	}
-	
+
+	header{
+		margin: 2em 0 0 0;
+	}
+	#profile{
+		margin: 3em 0 0 0 ;
+	}
 }
 
 
@@ -155,20 +191,20 @@ form{
     -webkit-border-radius:0 !important;
 }
 
-
-#profile{
-	width: 100%;
-	max-height: 80%;
-	height: auto;
-
-	margin: 5em 0 0 0 ;
+.tab-content{
+	color: black;
 }
 
-#userpicture{
-	display: block;
-    margin: auto;
-	overflow: hidden;
-	width: 50%;
-	
-	object-fit: cover;
+a:link{
+	text-decoration: none;
+	color: white;
+}
+
+
+a:visited{
+	color: white;
+}
+
+a:hover{
+	color: rgb(220,220,220);
 }
