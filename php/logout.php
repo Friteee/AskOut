@@ -1,9 +1,9 @@
 <?php
 
 require_once'connect_to_db.php';
-login();
+logout();
 
-function login()
+function logout()
 {
   $email = htmlspecialchars($_POST['email']);
   $password = htmlspecialchars($_POST['password']);
@@ -31,13 +31,10 @@ function login()
     return;
   }
   $row = $stmt_result->fetch_array();
-  if (session_status() == PHP_SESSION_NONE) {
-    session_start();
+  if (session_status() != PHP_SESSION_NONE) {
+    session_destroy();
   }
-  $_SESSION['name'] = $row['name'];
-  $_SESSION['email'] = $row['email'];
-  $_SESSION['phone'] = $row['phone'];
-  $stmt = $mysqli->prepare("UPDATE users SET logged_in = 1 WHERE email = ?");
+  $stmt = $mysqli->prepare("UPDATE users SET logged_in = 0 WHERE email = ?");
   $stmt->bind_param('s', $email);
   $stmt->execute();
   $stmt->close();
