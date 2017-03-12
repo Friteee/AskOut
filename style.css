@@ -40,7 +40,7 @@ body{
 }
 
 #centeredButtons{
-	margin: 1em 0 5em 20%;
+	margin: 1em 0 5em 5%;
 	display: flex;
 	flex-direction: column; 
 }
@@ -189,6 +189,7 @@ form h1{
 
 @media screen and (min-width: 350px){
 	#centeredButtons{
+		margin: 1em 0 1em 20%;
 		flex-direction: row; 
 	}
 }
