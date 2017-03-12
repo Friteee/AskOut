@@ -42,14 +42,14 @@ body{
 }
 
 #centeredButtons{
-	margin: 1em 20% 2em 20%; 
-	display: inline-block;
+	margin: 1em 0 5em 20%; 
 }
 #buttonCenter{
 	float: left;
+	margin-bottom: 3em;
 	background-color: transparent;
 	border: 5px solid white;
-	margin-right: 1%;
+	margin-right: 5%;
 }
 
 .header_title{
@@ -125,7 +125,6 @@ main{
 }
 
 form{
-
 	width: 50%;
 	margin: 15em 25% 0 25%;
 	animation-name: dropHeader;
@@ -197,6 +196,8 @@ form h1{
 		width: 60%;
 		font-size: 1.2em;
 	}
+	
+	
 
 	#in_header{
 		opacity: 1;
@@ -205,6 +206,12 @@ form h1{
 		width: 10%;
 		height: 10%;
 	}
+}
+
+@media screen and (min-width: 1000px){
+	#centeredButtons{
+	margin-left: 40%; 
+}
 }
 
 
