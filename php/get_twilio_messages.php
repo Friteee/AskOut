@@ -23,7 +23,7 @@ function getMessages()
   $sentMessages = array();
   foreach($messages as $message)
   {
-    array_push($sentMessages, ['message' => $_SESSION['name'] . ' : ' . $message->body]);
+    array_push($sentMessages, ['message' => $message->body]);
   }
   echo json_encode(['status' => 'success', 'data' => $sentMessages]);
 }

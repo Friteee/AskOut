@@ -11,6 +11,8 @@ $(document).ready(function()
   $('#submitmsg').click(createMessage);
 });
 
+window.setInterval(getMessages, 5000);
+
 function getUserProfile()
 {
   // create the request to server
@@ -67,7 +69,6 @@ function createMessage(event)
     type: 'POST',
     data: {id: get_url_vars()['id'], sid: get_url_vars()['sid'], message: $('#usermsg').val()}
   });
-  processMessage({message: $('#usermsg').val()});
   getMessages();
   event.preventDefault();
 }

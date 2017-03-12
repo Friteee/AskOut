@@ -5,16 +5,17 @@ require_once 'twilio.php';
 sendMessage();
 function sendMessage()
 {
+  if (session_status() == PHP_SESSION_NONE)
+    session_start();
   $message = htmlspecialchars($_POST['message']);
+  $message = $_SESSION['name'] . ' : ' . $message;
   $id = $_POST['id'];
-  $sid = $_POST['sid'];
+  $sid = htmlspecialchars($_POST['sid']);
   if(empty($message) || empty($id) || empty($sid))
   {
     echo "Message is empty";
     return;
   }
-  if (session_status() == PHP_SESSION_NONE)
-    session_start();
   if(empty($_SESSION['name']))
   {
     echo "User is not logged on";
