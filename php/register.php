@@ -1,6 +1,7 @@
 <?php
 
 require_once'connect_to_db.php';
+require_once'twilio.php';
 register();
 
 function register()
@@ -53,6 +54,7 @@ function register()
   $_SESSION['email'] = $email;
   $_SESSION['name'] = $name;
   $_SESSION['id'] = $stmt->insert_id;
+  createChannel($stmt->insert_id);
   $mysqli->close();
   echo 'success';
 }
