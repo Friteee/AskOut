@@ -25,10 +25,11 @@ function getUsersNearLocation()
     return;
   }
   $mysqli = createMySQLi();
-  $diff = 0.5;
+  $latDiff = 0.02;
+  $lngDiff = 0.04;
   $stmt = $mysqli->prepare("SELECT * FROM users WHERE
-                            longitude >= (? - $diff) AND longitude <= (? + $diff) AND
-                            latitude >= (? - $diff) AND latitude <= (? + $diff) AND
+                            longitude >= (? - $lngDiff) AND longitude <= (? + $lngDiff) AND
+                            latitude >= (? - $latDiff) AND latitude <= (? + $latDiff) AND
                             track = 1");
   $stmt->bind_param('dddd', $longitude, $longitude, $latitude, $latitude);
   $stmt->execute();
