@@ -1,7 +1,7 @@
 
 $(document).ready(function()
 {
-  if(!('id' in get_url_vars()))
+  if(!('id' in get_url_vars() && 'sid' in get_url_vars()))
   {
     console.log("No id");
     return;
@@ -36,7 +36,7 @@ function getMessages()
   $.ajax({
     url: "../php/get_twilio_messages.php",
     type: 'POST',
-    data: {id: get_url_vars()['id']}
+    data: {id: get_url_vars()['id'], sid: get_url_vars()['sid']}
   }).done(processMessages);
 }
 
@@ -65,7 +65,7 @@ function createMessage(event)
   $.ajax({
     url: "../php/send_twilio_message.php",
     type: 'POST',
-    data: {id: get_url_vars()['id'], message: $('#usermsg').val()}
+    data: {id: get_url_vars()['id'], sid: get_url_vars()['sid'], message: $('#usermsg').val()}
   });
   processMessage({message: $('#usermsg').val()});
   getMessages();

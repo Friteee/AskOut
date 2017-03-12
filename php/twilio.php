@@ -14,7 +14,7 @@ function createChannel($id, $name)
   $service_sid = "IS9aa8b1a079d8434bbea625fc649b1461";
   $client = new Client($sid, $token);
   // Create the channel
-  $channel = $client->ipMessaging
+  $channel = $client->chat
       ->services($service_sid)
       ->channels
       ->create(
@@ -23,35 +23,37 @@ function createChannel($id, $name)
               'uniqueName' => strval($id)
           )
       );
+  return $channel->sid;
 }
 
-function getChannelMessages($id)
+function getChannelMessages($id, $channel_sid)
 {
   $sid = "ACa0c7fb496a58af7fcc32e8c5e41bbe2e";
   $token = "e13175ce8269342d9c0c41168f4ce593";
   $service_sid = "IS9aa8b1a079d8434bbea625fc649b1461";
   $client = new Client($sid, $token);
   // Create the channel
-  $messages = $client->ipMessaging
+  $messages = $client->chat
       ->services($service_sid)
-      ->channels($id)
+      ->channels($channel_sid)
       ->messages
       ->read();
   return $messages;
 }
 
-function createMessage($id, $messageName)
+function createMessage($id, $channel_sid, $messageName)
 {
   $sid = "ACa0c7fb496a58af7fcc32e8c5e41bbe2e";
   $token = "e13175ce8269342d9c0c41168f4ce593";
   $service_sid = "IS9aa8b1a079d8434bbea625fc649b1461";
     // Initialize the client
+    print($messageName);
   $client = new Client($sid, $token);
 
   //Send the message
-  $message = $client->ipMessaging
-      ->services($service_id)
-      ->channels($id)
+  $message = $client->chat
+      ->services($service_sid)
+      ->channels($channel_sid)
       ->messages
       ->create($messageName);
 }

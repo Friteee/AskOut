@@ -48,7 +48,8 @@ function getUsersNearLocation()
                       'latitude'    => $row['latitude'],
                       'longitude'   => $row['longitude'],
                       'description' => $row['description'],
-                      'id'          => $row['id']]);
+                      'id'          => $row['id'],
+                      'sid'         => $row['chat_sid']]);
   }
   $mysqli->close();
   echo json_encode(['status' => 'success', 'data' => $data]);

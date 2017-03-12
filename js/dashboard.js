@@ -118,7 +118,7 @@ function addUser(user)
   }
   marker.addListener('click', function()
   {
-    window.location.replace('profile.html?id=' + user.id);
+    window.location.replace('profile.html?id=' + user.id + '&sid=' + user.sid);
   });
   markers.push(marker);
 }
