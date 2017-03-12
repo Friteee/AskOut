@@ -42,6 +42,7 @@ function getMessages()
     array_push($data,['name'        => $row['name'],
                       'latitude'    => $row['latitude'],
                       'longitude'   => $row['longitude'],
+                      'creation'    => $row['creation'],
                       'text'        => $row['text']]);
   }
   $mysqli->close();

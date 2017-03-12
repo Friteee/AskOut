@@ -1,5 +1,9 @@
 
-$(document).ready(getUserProfile);
+$(document).ready(function()
+{
+  getUserProfile();
+  getMessages();
+});
 
 function getUserProfile()
 {
@@ -23,6 +27,33 @@ function changeProfile(response)
   console.log(profile);
   $('#name').html(profile.name);
   $('#aboutus').html(profile.description);
+}
+
+function getMessages()
+{
+  // create the request to server
+  $.ajax({
+    url: "../php/get_twilio_messages.php",
+    type: 'POST',
+    data: {id: get_url_vars()['id']}
+  }).done(changeProfile);
+}
+
+function processMessages(response)
+{
+  response = JSON.parse(response);
+  if(response['status'] !== 'success')
+  {
+    alert(response['data']);
+    return;
+  }
+  var data = response['data'];
+  data.forEach(processMessage);
+}
+
+function processMessage(message)
+{
+  // TODO
 }
 
 // function to get GET parameters

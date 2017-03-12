@@ -9,6 +9,9 @@ $service_sid = "IS9aa8b1a079d8434bbea625fc649b1461";
 
 function createChannel($id, $name)
 {
+  $sid = "ACa0c7fb496a58af7fcc32e8c5e41bbe2e";
+  $token = "e13175ce8269342d9c0c41168f4ce593";
+  $service_sid = "IS9aa8b1a079d8434bbea625fc649b1461";
   $client = new Client($sid, $token);
   // Create the channel
   $channel = $client->ipMessaging
@@ -24,6 +27,9 @@ function createChannel($id, $name)
 
 function getChannelMessages($id)
 {
+  $sid = "ACa0c7fb496a58af7fcc32e8c5e41bbe2e";
+  $token = "e13175ce8269342d9c0c41168f4ce593";
+  $service_sid = "IS9aa8b1a079d8434bbea625fc649b1461";
   $client = new Client($sid, $token);
   // Create the channel
   $messages = $client->ipMessaging
@@ -36,6 +42,9 @@ function getChannelMessages($id)
 
 function createMessage($id, $messageName)
 {
+  $sid = "ACa0c7fb496a58af7fcc32e8c5e41bbe2e";
+  $token = "e13175ce8269342d9c0c41168f4ce593";
+  $service_sid = "IS9aa8b1a079d8434bbea625fc649b1461";
     // Initialize the client
   $client = new Client($sid, $token);
 
