@@ -54,7 +54,7 @@ function register()
   $_SESSION['email'] = $email;
   $_SESSION['name'] = $name;
   $_SESSION['id'] = $stmt->insert_id;
-  createChannel($stmt->insert_id);
+  createChannel($stmt->insert_id, $name);
   $mysqli->close();
   echo 'success';
 }

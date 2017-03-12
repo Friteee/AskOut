@@ -12,7 +12,10 @@ function sendMessage()
   if (session_status() == PHP_SESSION_NONE)
     session_start();
   if(empty($_SESSION['name']))
-    return "User is not logged on";
+  {
+    echo "User is not logged on";
+    return;
+  }
   $name = $_SESSION['name'];
   createMessage($id, $name);
 }

@@ -11,11 +11,18 @@ function getMessages()
     echo json_encode(['status' => 'error', 'data' => 'No id specified']);
     return;
   }
+  if(session_status() == PHP_SESSION_NONE)
+    session_start();
+  if(empty($_SESSION['name']))
+  {
+    echo['data' => 'User is not logged on', 'status' => 'error'];
+    return;
+  }
   $messages = getChannelMessages($id);
   $sentMessages = array();
   for($messages as $message)
   {
-    array_push($sentMessages, ['message' => $message->body]);
+    array_push($sentMessages, ['message' => $_SESSION['name'] . ' : ' . $message->body]);
   }
   echo json_encode(['status' => 'success', 'data' => $sentMessages]);
 }
