@@ -19,10 +19,11 @@ function getMessages()
     session_start();
   }
   $mysqli = createMySQLi();
-  $diff = 0.5;
+  $latDiff = 0.02;
+  $lngDiff = 0.04;
   $stmt = $mysqli->prepare("SELECT * FROM messages WHERE
-                            longitude >= (? - $diff) AND longitude <= (? + $diff) AND
-                            latitude >= (? - $diff) AND latitude <= (? + $diff)
+                            longitude >= (? - $lngDiff) AND longitude <= (? + $lngDiff) AND
+                            latitude >= (? - $latDiff) AND latitude <= (? + $latDiff)
                             ORDER BY creation LIMIT 100
                             ");
   $stmt->bind_param('dddd', $longitude, $longitude, $latitude, $latitude);

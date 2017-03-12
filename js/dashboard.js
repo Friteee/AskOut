@@ -7,6 +7,9 @@ $(document).ready(function(){
   $('#submitmsg').click(createMessage);
 });
 
+window.setInterval(getPeopleNear, 5000);
+window.setInterval(getMessages, 1000);
+
 function initMap() {
     getPosition();
 }
@@ -19,6 +22,7 @@ function getPosition()
     wrapIpPosition("no error");
   }
 }
+
 
 function wrapIpPosition(error)
 {
@@ -42,6 +46,12 @@ function setPosition()
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     center: position
+  });
+  map.addListener("click", function (event) {
+    var latitude = event.latLng.lat();
+    var longitude = event.latLng.lng();
+    position = {lat: latitude, lng: longitude};
+    sendPosition();
   });
 }
 
@@ -139,17 +149,18 @@ function createMessage(event)
 
 function getMessages()
 {
-  $('#chatbox').val("");
   $.ajax({
     url: "../php/get_messages.php",
     type: 'POST',
     data: position
   }).done(function(response)
   {
+    $('#chatbox').val("");
     response = JSON.parse(response);
     var data = response['data'];
     data.forEach(addMessage);
   });
+
 }
 
 function clearMarkers()
@@ -163,5 +174,5 @@ function clearMarkers()
 function addMessage(message)
 {
   $('#chatbox').val($('#chatbox').val() + message.name + ' : ' + message.text + '\n');
-  // TODO
+  $('#chatbox').scrollTop($('#chatbox')[0].scrollHeight);
 }
