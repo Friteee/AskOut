@@ -54,7 +54,10 @@ function register()
   $_SESSION['email'] = $email;
   $_SESSION['name'] = $name;
   $_SESSION['id'] = $stmt->insert_id;
-  createChannel($stmt->insert_id, $name);
+  $sid = createChannel($stmt->insert_id, $name);
+  $stmt = $mysqli->prepare("UPDATE users SET chat_sid = ? WHERE id = ?");
+  $stmt->bind_param('si', $sid, $_SESSION['id']);
+  $stmt->execute();
   $mysqli->close();
   echo 'success';
 }
