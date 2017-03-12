@@ -40,7 +40,9 @@ body{
 }
 
 #centeredButtons{
-	margin: 1em 0 5em 20%; 
+	margin: 1em 0 5em 20%;
+	display: flex;
+	flex-direction: column; 
 }
 #buttonCenter{
 	float: left;
@@ -184,10 +186,13 @@ form h1{
 .messages{
 	margin: 1em 10%;
 }
-/*
 
+@media screen and (min-width: 350px){
+	#centeredButtons{
+		flex-direction: row; 
+	}
+}
 
-*/
 @media screen and (min-width: 600px){
 	.intro{
 		margin: 3em 20%;
@@ -195,7 +200,7 @@ form h1{
 		font-size: 1.2em;
 	}
 	
-	
+
 
 	#in_header{
 		opacity: 1;
