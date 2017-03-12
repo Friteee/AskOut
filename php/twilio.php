@@ -47,7 +47,6 @@ function createMessage($id, $channel_sid, $messageName)
   $token = "e13175ce8269342d9c0c41168f4ce593";
   $service_sid = "IS9aa8b1a079d8434bbea625fc649b1461";
     // Initialize the client
-    print($messageName);
   $client = new Client($sid, $token);
 
   //Send the message
