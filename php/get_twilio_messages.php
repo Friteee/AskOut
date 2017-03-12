@@ -6,7 +6,7 @@ getMessages();
 function getMessages()
 {
   $id = $_POST['id'];
-  if(empty($id) || $id !== intval($id))
+  if(empty($id) || $id != intval($id))
   {
     echo json_encode(['status' => 'error', 'data' => 'No id specified']);
     return;
@@ -15,12 +15,12 @@ function getMessages()
     session_start();
   if(empty($_SESSION['name']))
   {
-    echo['data' => 'User is not logged on', 'status' => 'error'];
+    echo json_encode(['data' => 'User is not logged on', 'status' => 'error']);
     return;
   }
   $messages = getChannelMessages($id);
   $sentMessages = array();
-  for($messages as $message)
+  foreach($messages as $message)
   {
     array_push($sentMessages, ['message' => $_SESSION['name'] . ' : ' . $message->body]);
   }

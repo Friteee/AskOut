@@ -17,7 +17,7 @@ function initMap() {
 function getPosition()
 {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(wrapGpsPosition, wrapIpPosition,{timeout:5000});
+    navigator.geolocation.getCurrentPosition(wrapGpsPosition, wrapIpPosition,{timeout:10000});
   } else {
     wrapIpPosition("no error");
   }
@@ -85,7 +85,11 @@ function getPeopleNear()
     data: position
   }).done(function(response)
   {
-    console.log(response);
+    if(response.status == "error")
+    {
+      console.log(response);
+      return;
+    }
     response = JSON.parse(response);
     var data = response['data'];
     clearMarkers();
@@ -156,6 +160,11 @@ function getMessages()
   }).done(function(response)
   {
     $('#chatbox').val("");
+    if(response['status'] === "error")
+    {
+      console.log(response);
+      return;
+    }
     response = JSON.parse(response);
     var data = response['data'];
     data.forEach(addMessage);
